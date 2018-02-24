@@ -26,13 +26,14 @@ io.on('connection', socket => {
     'A new user has joined Super Chat!'
   ));
   
-  socket.on('createMessage', message => {
+  socket.on('createMessage', (message, callback) => {
     console.log(`New message from ${message.from}:`, message.text);
 
     io.emit('newMessage', generateMessage(
       message.from,
       message.text
     ));
+    callback('This is from the server.');
   });
 
 

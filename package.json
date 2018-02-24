@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha \"./{,!(node_modules)/**/}*.test.js\"",
     "test-watch": "nodemon --exec 'npm test'",
-    "start": "node server/server"
+    "start": "nodemon server/server"
   },
   "engines": {
     "node": "8.9.3"
