@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const {generateMessage, generateLocationMessage} = require('./message');
 
-describe('generateMessage', () => {
+describe('#generateMessage', () => {
 
   it('should generate the correct message object', () => {
     const from = 'user';
@@ -13,7 +13,7 @@ describe('generateMessage', () => {
   });
 });
 
-describe('generateLocationMessage', () => {
+describe('#generateLocationMessage', () => {
 
   it('should generate the correct location object', () => {
     const from = 'user';
