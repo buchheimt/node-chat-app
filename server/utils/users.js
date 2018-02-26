@@ -1,6 +1,3 @@
-[{
-
-}]
 
 // addUser(id, name, room)
 // removeUser(id)
@@ -13,10 +10,10 @@ class Users {
   }
 
   addUser(id, name, room) {
-    const user = {id, name, room};
+    const user = { id, name, room };
     this.users.push(user);
     return user;
   }
 }
 
-module.exports = {Users};
+module.exports = { Users };

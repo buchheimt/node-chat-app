@@ -1,9 +1,10 @@
-const expect = require('chai').expect;
+/* global describe, it */
 
-const {isRealString} = require('./validation');
+const { expect } = require('chai');
+
+const { isRealString } = require('./../server/utils/validation');
 
 describe('#isRealString', () => {
-
   it('should reject non-string values', () => {
     expect(isRealString(9)).to.be.false;
     expect(isRealString([])).to.be.false;

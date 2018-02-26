@@ -1,9 +1,10 @@
-const expect = require('chai').expect;
+/* global describe, it */
 
-const {Users} = require('./users');
+const { expect } = require('chai');
+
+const { Users } = require('./../server/utils/users');
 
 describe('Users', () => {
-
   it('should add new user', () => {
     const users = new Users();
     const newUser = users.addUser('123', 'Tyler', 'Westworld Fans');
