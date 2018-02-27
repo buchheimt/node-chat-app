@@ -30,10 +30,6 @@ socket.on('connect', () => {
   });
 });
 
-socket.on('disconnect', () => {
-  console.log('Disconnected from server');
-});
-
 socket.on('newMessage', (message) => {
   const formattedTime = moment(message.createdAt).format('h:mm a');
 
@@ -60,6 +56,18 @@ socket.on('newLocationMessage', (message) => {
 
   $('#messages').append(html);
   scrollToBottom();
+});
+
+socket.on('updateUserList', (users) => {
+  const ol = $('<ol></ol>');
+
+  users.forEach(user => ol.append($('<li></li>').text(user)));
+
+  $('#users').html(ol);
+});
+
+socket.on('disconnect', () => {
+  console.log('Disconnected from server');
 });
 
 
