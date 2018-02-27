@@ -77,7 +77,6 @@ $('#message-form').on('submit', (e) => {
   const $messageInput = $('[name=message]');
 
   socket.emit('createMessage', {
-    from: $('[name=username]').val(),
     text: $messageInput.val(),
   }, () => {
     $messageInput.val('');
@@ -98,8 +97,8 @@ $locationButton.on('click', () => { // eslint-disable-line consistent-return
       latitude: position.coords.latitude,
       longitude: position.coords.longitude,
     });
-  }, () => {
-    alert('Unable to fetch location');
+  }, (err) => {
+    alert('Unable to fetch location:', err);
     $locationButton.removeAttr('disabled').text('Send Location');
   });
 });
